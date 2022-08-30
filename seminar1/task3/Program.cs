@@ -28,3 +28,7 @@ else if (number == 7)
   {
     Console.WriteLine("воскресенье");
   }
+else 
+{
+  Console.WriteLine("в неделе 7 дней");
+}
