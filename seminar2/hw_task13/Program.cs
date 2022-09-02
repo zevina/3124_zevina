@@ -14,7 +14,7 @@ if (Math.Abs(userNumber) >=100)
     long number = Math.Abs(userNumber);
     if (number >= 1000)
     {
-      while (number / 10 > 1000)
+      while (number / 10 >= 1000)
       {
         number = number / 10;
       }
