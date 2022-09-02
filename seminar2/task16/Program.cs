@@ -9,11 +9,18 @@ int number1 = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Введите второе число:");
 int number2 = Convert.ToInt32(Console.ReadLine());
 
-if (number1 / number2 == number2 || number2 / number1 == number1)
-{
-  Console.WriteLine("Да. Одно из чисел является квадратом другого");
-}
+if (number1 != 0 && number2 !=0)
+  {
+    if (number1 / number2 == number2 || number2 / number1 == number1)
+  {
+    Console.WriteLine("Да. Одно из чисел является квадратом другого");
+  }
+  else
+  {
+    Console.WriteLine("Нет");
+  }
+  }
 else
-{
-  Console.WriteLine("Нет");
-}
+  {
+    Console.WriteLine("Нельзя делить на 0!!!");
+  }
