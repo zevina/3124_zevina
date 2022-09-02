@@ -8,7 +8,7 @@ int number = rand.Next(100,1000); // [100,1000) числа от 100 до 999
 
 Console.WriteLine($"Сгенерировалось случайное число: {number}");
 int digit3 = number % 10; //остаток от деления на 10
-int digit1 = number / 100;//целое от деления на 10
+int digit1 = number / 100;//целое от деления на 100
 
 
 // Console.WriteLine(digit1);
