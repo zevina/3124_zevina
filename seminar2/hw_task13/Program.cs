@@ -22,7 +22,7 @@ if (Math.Abs(userNumber) >=100)
       long digit3 = number % 10; //остаток от деления на 10 трехзначного числа --> третья цифра
       Console.WriteLine($"Третья цифра числа {userNumber}: {digit3}");
     }
-    else
+    else                         //если число от пользователя трехзначное
     {
       long digit3 = number % 10; //остаток от деления на 10 трехзначного числа --> третья цифра
       Console.WriteLine($"Третья цифра числа {userNumber}: {digit3}");
