@@ -10,8 +10,9 @@ Console.WriteLine($"Сгенерировалось случайное число
 int digit3 = number % 10; //остаток от деления на 10
 int digit1 = number / 100;//целое от деления на 100
 
-
+int result = digit1 * 10 + digit3; // умножаем количество десятков на 10
 // Console.WriteLine(digit1);
 // Console.WriteLine(digit3);
 
-System.Console.WriteLine("Новое число: "+ digit1 + digit3);
+// System.Console.WriteLine("Новое число: "+ digit1 + digit3);
+System.Console.WriteLine("Новое число: "+ result);
