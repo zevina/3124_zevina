@@ -12,21 +12,12 @@ long userNumber = Convert.ToInt64(Console.ReadLine());
 if (Math.Abs(userNumber) >=100)
 {
     long number = Math.Abs(userNumber);
-    if (number >= 1000)
-    {
-      while (number / 10 >= 1000)
+      while (number > 999)
       {
         number = number / 10;
       }
-      number = number / 10;      //переход от четырехзначного числа к трехзначному
       long digit3 = number % 10; //остаток от деления на 10 трехзначного числа --> третья цифра
       Console.WriteLine($"Третья цифра числа {userNumber}: {digit3}");
-    }
-    else                         //если число от пользователя трехзначное
-    {
-      long digit3 = number % 10; //остаток от деления на 10 трехзначного числа --> третья цифра
-      Console.WriteLine($"Третья цифра числа {userNumber}: {digit3}");
-    }
 }
 else
 {
