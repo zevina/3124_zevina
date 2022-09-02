@@ -8,9 +8,9 @@ int number = Convert.ToInt32(Console.ReadLine());
 
 if (number % 7 == 0 && number % 23 == 0)
 {
-  System.Console.WriteLine($"Число {number} кратно одновременно 7 и 23. Ура!");
+  Console.WriteLine($"Число {number} кратно одновременно 7 и 23. Ура!");
 }
 else
 {
-  System.Console.WriteLine($"Число {number} не кратно одновременно 7 и 23");
+  Console.WriteLine($"Число {number} не кратно одновременно 7 и 23");
 }
