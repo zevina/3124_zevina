@@ -8,7 +8,7 @@ Console.WriteLine("Введите пятизначное число:");
 string userNumber = Console.ReadLine();
 int number = Convert.ToInt32(userNumber);
 
-if (Math.Abs(number) < 99999 && Math.Abs(number) > 9999)
+if (Math.Abs(number) <= 99999 && Math.Abs(number) > 9999)
 {
   if (userNumber[0] == userNumber[4] && userNumber[1] == userNumber[3])
   {
