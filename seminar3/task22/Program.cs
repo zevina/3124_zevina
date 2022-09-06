@@ -5,14 +5,21 @@
 
 Console.WriteLine("Введите число:");
 int number = Convert.ToInt32(Console.ReadLine());
-int count = 1;
-while (count <= number)
-{  
-  int kvadrant = Convert.ToInt32(Math.Pow(count,2));
-  Console.Write(kvadrant + " ");
-  count++;
+// int count = 1;
+// while (count <= number)
+// {  
+//   int kvadrant = Convert.ToInt32(Math.Pow(count,2));
+//   Console.Write(kvadrant + " ");
+//   count++;
+// }
+if (number > 0)
+{
+    for (int i = 1; i <= number; i++)
+        {
+        Console.Write(i*i + " ");
+        }
 }
-if (number <= 0)
+else
 {
   Console.WriteLine("число должно быть положительное");
 }
