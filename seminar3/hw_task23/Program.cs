@@ -5,12 +5,12 @@
 
 Console.WriteLine("Введите число:");
 int number = Convert.ToInt32(Console.ReadLine());
-int count = 1;
-while (count <= number)
+int i = 1;
+while (i <= number)
 {  
-  int kvadrant = Convert.ToInt32(Math.Pow(count,3));
-  Console.Write(kvadrant + " ");
-  count++;
+  int cube = Convert.ToInt32(Math.Pow(i,3));
+  Console.Write(cube + " ");
+  i++;
 }
 if (number <= 0)
 {
