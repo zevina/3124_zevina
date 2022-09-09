@@ -37,5 +37,5 @@ if (exp == -1)
 else
 {
   Console.WriteLine($"Число {numberA} в степени {numberB}: ");
-Console.WriteLine(exp);
+  Console.WriteLine(exp);
 }
