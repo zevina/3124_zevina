@@ -14,7 +14,7 @@ int[] GetArray(int size, int leftRange, int rightRange)
     return arr;
 }
 
-int SumEvenElements(int[] arr)
+int SumOddElements(int[] arr)
 {
   int sum = 0;
   for (int i = 1; i < arr.Length; i+=2)
@@ -29,4 +29,4 @@ Console.WriteLine("Введите количество элементов мас
 int number = Convert.ToInt32(Console.ReadLine());
 int[] array = GetArray(number, -99, 99);
 Console.WriteLine("Рандомный массив чисел: " + string.Join(", ", array));
-Console.WriteLine("Сумма всех элементов на нечетных позициях: " + SumEvenElements(array));
+Console.WriteLine("Сумма всех элементов на нечетных позициях: " + SumOddElements(array));
