@@ -11,7 +11,7 @@ for(int i = 0; i < 1; i++) //0-я строка (только 1 в центре)
 {
   for (int j = 0; j < triangle.GetLength(1); j++)
   {
-    if (triangle[i, j] == 0) Console.Write(" ");
+    if (triangle[i, j] == 0) Console.Write("  ");
     else Console.Write($"{triangle[i, j]}");
   }
 }
@@ -22,8 +22,8 @@ for (int i = 1; i < triangle.GetLength(0); i++) //остальные строк�
   for (int j = 1; j < triangle.GetLength(1)-1; j++)
   {
     triangle[i,j] = triangle[i-1,j-1] + triangle[i-1,j+1];
-    if (triangle[i, j] == 0) Console.Write(" ");
-    else Console.Write($"{triangle[i, j]}");
+    if (triangle[i, j] == 0) Console.Write("  ");
+    else Console.Write($" {triangle[i, j]} ");
   }
   Console.WriteLine();
 }
