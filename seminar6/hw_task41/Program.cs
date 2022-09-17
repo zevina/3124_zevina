@@ -3,26 +3,19 @@
 // 0, 7, 8, -2, -2 -> 2
 // 1, -7, 567, 89, 223 -> 3
 
-Console.WriteLine("Вводите числа поочередно через пробел. По окончании нажмите Enter");
+Console.WriteLine("Вводите числа поочередно. По окончании введите stop");
 
-string nums = Console.ReadLine();
-string[] numbers = nums.Split(new char[] {' '});
-int[] resultArray = new int[numbers.Length];
-for (int i = 0; i < numbers.Length; i++)
+int i = 0;
+bool a = true;
+while (a == true)
 {
-  resultArray[i] = Convert.ToInt32(numbers[i]);
+  string n = Console.ReadLine();
+  if (n != "stop" && Convert.ToInt32(n) > 0) i++;
+  else if (n == "stop") 
+  {
+    a = false;
+    break;
+  }
 }
 
-
-int CountElements(int[] arr)
-{
-    int count = 0;
-    for (int i = 0; i < arr.Length; i++)
-    {
-        if(arr[i] > 0) 
-            count++; 
-    }
-    return count;
-}
-
-Console.WriteLine($"Количество чисел больше нуля: {CountElements(resultArray)}");
+Console.WriteLine($"Количество чисел больше нуля: {i}");
