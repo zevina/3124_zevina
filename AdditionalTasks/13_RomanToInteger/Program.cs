@@ -35,7 +35,7 @@ string input = Console.ReadLine();
 char[] roman = input.ToCharArray();
 
 
-Dictionary<char, int> romanDidits = new Dictionary<char, int>
+Dictionary<char, int> romanDigits = new Dictionary<char, int>
 {
     { 'I', 1 },
     { 'i', 1 },
@@ -54,13 +54,38 @@ Dictionary<char, int> romanDidits = new Dictionary<char, int>
 };
 
 int result = 0;
-for (int i = 0; i < roman.Length - 1; i++)
+
+bool NumberExist(string[] letters, string inputNumber)
 {
-  if (romanDidits[roman[i]] < romanDidits[roman[i + 1]]) result -= romanDidits[roman[i]];
-  else if (romanDidits[roman[i]] >= romanDidits[roman[i + 1]]) result += romanDidits[roman[i]];
+  bool flag = true;
+  for (int j = 0; j < letters.Length; j++)
+  {
+    if (inputNumber.Contains(letters[j]) == true)
+    {
+      flag = false;
+      break;
+    }
+    else flag = true;
+  }
+  return flag;
 }
-result += romanDidits[roman[roman.Length - 1]];
 
-Console.WriteLine(result);
+string[] exceptions = { "IL", "IC", "ID", "IM", "VX", "VL", "VC", "VD", "VM", "XD", "XM", "LC", "LD", "LM" };
 
 
+Console.WriteLine(NumberExist(exceptions, input));
+
+if (NumberExist(exceptions, input) == true)
+{
+  for (int i = 0; i < roman.Length - 1; i++)
+  {
+    if (romanDigits[roman[i]] < romanDigits[roman[i + 1]]) result -= romanDigits[roman[i]];
+    else if (romanDigits[roman[i]] >= romanDigits[roman[i + 1]]) result += romanDigits[roman[i]];
+  }
+  result += romanDigits[roman[^1]];
+  Console.WriteLine($"Введенное число равно {result}");
+}
+else
+{
+  Console.WriteLine("Число введено неверно!");
+}
