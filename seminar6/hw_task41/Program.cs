@@ -11,7 +11,7 @@ while (a == true)
 {
   string n = Console.ReadLine();
   if (n != "stop" && Convert.ToInt32(n) > 0) i++;
-  else if (n == "stop") 
+  else if (n == "stop")
   {
     a = false;
     break;
