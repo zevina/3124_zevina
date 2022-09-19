@@ -30,31 +30,6 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 */
 
-Console.WriteLine("Введите римское число: ");
-string input = Console.ReadLine();
-char[] roman = input.ToCharArray();
-
-
-Dictionary<char, int> romanDigits = new Dictionary<char, int>
-{
-    { 'I', 1 },
-    { 'i', 1 },
-    { 'V', 5 },
-    { 'v', 5 },
-    { 'X', 10 },
-    { 'x', 10 },
-    { 'L', 50 },
-    { 'l', 50 },
-    { 'C', 100 },
-    { 'c', 100 },
-    { 'D', 500 },
-    { 'd', 500 },
-    { 'M', 1000 },
-    { 'm', 1000 }
-};
-
-int result = 0;
-
 bool NumberExist(string[] letters, string inputNumber)
 {
   bool flag = true;
@@ -70,12 +45,27 @@ bool NumberExist(string[] letters, string inputNumber)
   return flag;
 }
 
+Dictionary<char, int> romanDigits = new Dictionary<char, int>
+{
+    { 'I', 1 },
+    { 'V', 5 },
+    { 'X', 10 },
+    { 'L', 50 },
+    { 'C', 100 },
+    { 'D', 500 },
+    { 'M', 1000 },
+};
+
 string[] exceptions = { "IL", "IC", "ID", "IM", "VX", "VL", "VC", "VD", "VM", "XD", "XM", "LC", "LD", "LM" };
 
+Console.WriteLine("Введите римское число: ");
+string input = Console.ReadLine();
+string upper = input.ToUpper();
+char[] roman = upper.ToCharArray();
 
-Console.WriteLine(NumberExist(exceptions, input));
+int result = 0;
 
-if (NumberExist(exceptions, input) == true)
+if (NumberExist(exceptions, upper) == true)
 {
   for (int i = 0; i < roman.Length - 1; i++)
   {
