@@ -126,9 +126,3 @@ string input = Console.ReadLine() ?? "";
 string upper = input.ToUpper();
 // char[] roman = upper.ToCharArray();
 // ResultArray(roman);
-
-
-int romanToInt(string s)
-{
-
-}
