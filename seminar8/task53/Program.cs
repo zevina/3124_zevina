@@ -1,10 +1,4 @@
-﻿// Задача 46: Задайте двумерный массив размером m×n, заполненный случайными целыми числами.
-
-// m = 3, n = 4.
-
-// 1 4 8 19
-// 5 -2 33 -2
-// 77 3 8 1
+﻿// Задача 53: Задайте двумерный массив. Напишите программу, которая поменяет местами первую и последнюю строку массива.
 
 int ReadNumber(string message) // Ввод числа из консоли.
 {
@@ -26,7 +20,7 @@ int[,] GetMatrix(int rows, int columns, int leftRange = -10, int rightRange = 10
   return matrix;
 }
 
-void PrintMatrix(int[,] matrix) // Вывод массива в терминал.
+void PrintMatrix(int[,] matrix) // Вывод массива в консоль.
 {
   for (int i = 0; i < matrix.GetLength(0); i++)
   {
@@ -38,10 +32,27 @@ void PrintMatrix(int[,] matrix) // Вывод массива в терминал
   }
 }
 
+int[,] ReplaceMatrixRows(int[,] matrix) // поменяет местами первую и последнюю строку массива.
+{
+  for (int j = 0; j < matrix.GetLength(1); j++)
+  {
+    int temp = matrix[0, j];
+    matrix[0, j] = matrix[matrix.GetLength(0) - 1, j];
+    matrix[matrix.GetLength(0) - 1, j] = temp;
+  }
+  return matrix;
+}
+
 
 int m = ReadNumber("Введите количество строк матрицы: ");
 int n = ReadNumber("Введите количество столбцов матрицы: ");
 
 int[,] matr = GetMatrix(m, n);
-PrintMatrix(matr);
 
+Console.WriteLine("Исходная матрица:");
+PrintMatrix(matr);
+Console.WriteLine();
+
+int[,] matr2 = ReplaceMatrixRows(matr);
+Console.WriteLine("Измененная матрица:");
+PrintMatrix(matr2);

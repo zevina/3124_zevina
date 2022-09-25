@@ -1,10 +1,5 @@
-﻿// Задача 46: Задайте двумерный массив размером m×n, заполненный случайными целыми числами.
+﻿// Задача 55: Задайте двумерный массив. Напишите программу, которая заменяет строки на столбцы.
 
-// m = 3, n = 4.
-
-// 1 4 8 19
-// 5 -2 33 -2
-// 77 3 8 1
 
 int ReadNumber(string message) // Ввод числа из консоли.
 {
@@ -38,10 +33,30 @@ void PrintMatrix(int[,] matrix) // Вывод массива в терминал
   }
 }
 
+int[,] ReverseMatrix(int[,] matrix, int leftRange = -10, int rightRange = 10) // Меняет местами строки и столбцы (поворот матрицы)
+{
+  int[,] newmatr = new int[matrix.GetLength(1), matrix.GetLength(0)];
+  for (int i = 0; i < newmatr.GetLength(0); i++)
+  {
+    for (int j = 0; j < newmatr.GetLength(1); j++)
+    {
+      newmatr[i, j] = matrix[j, i];
+    }
+  }
+  return newmatr;
+}
+
 
 int m = ReadNumber("Введите количество строк матрицы: ");
 int n = ReadNumber("Введите количество столбцов матрицы: ");
 
 int[,] matr = GetMatrix(m, n);
+
+Console.WriteLine("Исходная матрица:");
 PrintMatrix(matr);
+Console.WriteLine();
+
+int[,] matr2 = ReverseMatrix(matr);
+Console.WriteLine("Измененная матрица:");
+PrintMatrix(matr2);
 

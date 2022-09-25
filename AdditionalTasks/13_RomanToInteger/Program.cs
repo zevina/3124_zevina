@@ -30,52 +30,105 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 */
 
-bool NumberExist(string[] letters, string inputNumber)
-{
-  bool flag = true;
-  for (int j = 0; j < letters.Length; j++)
-  {
-    if (inputNumber.Contains(letters[j]) == true)
-    {
-      flag = false;
-      break;
-    }
-    else flag = true;
-  }
-  return flag;
-}
+// 1 вариант
 
-Dictionary<char, int> romanDigits = new Dictionary<char, int>
-{
-    { 'I', 1 },
-    { 'V', 5 },
-    { 'X', 10 },
-    { 'L', 50 },
-    { 'C', 100 },
-    { 'D', 500 },
-    { 'M', 1000 },
-};
+// bool NumberExist(string[] letters, string inputNumber)
+// {
+//   bool flag = true;
+//   for (int j = 0; j < letters.Length; j++)
+//   {
+//     if (inputNumber.Contains(letters[j]) == true)
+//     {
+//       flag = false;
+//       break;
+//     }
+//     else flag = true;
+//   }
+//   return flag;
+// }
 
-string[] exceptions = { "IL", "IC", "ID", "IM", "VX", "VL", "VC", "VD", "VM", "XD", "XM", "LC", "LD", "LM" };
+// Dictionary<char, int> romanDigits = new Dictionary<char, int>
+// {
+//     { 'I', 1 },
+//     { 'V', 5 },
+//     { 'X', 10 },
+//     { 'L', 50 },
+//     { 'C', 100 },
+//     { 'D', 500 },
+//     { 'M', 1000 },
+// };
+
+// string[] exceptions = { "IL", "IC", "ID", "IM", "VX", "VL", "VC", "VD", "VM", "XD", "XM", "LC", "LD", "LM" };
+
+// Console.WriteLine("Введите римское число: ");
+// string input = Console.ReadLine();
+// string upper = input.ToUpper();
+// char[] roman = upper.ToCharArray();
+
+// int result = 0;
+
+// if (NumberExist(exceptions, upper) == true)
+// {
+//   for (int i = 0; i < roman.Length - 1; i++)
+//   {
+//     if (romanDigits[roman[i]] < romanDigits[roman[i + 1]]) result -= romanDigits[roman[i]];
+//     else if (romanDigits[roman[i]] >= romanDigits[roman[i + 1]]) result += romanDigits[roman[i]];
+//   }
+//   result += romanDigits[roman[^1]];
+//   Console.WriteLine($"Введенное число равно {result}");
+// }
+// else
+// {
+//   Console.WriteLine("Число введено неверно!");
+// }
+
+// 2 вариант
+
+// Dictionary<char, int> romanDigits = new Dictionary<char, int>
+// {
+//     { 'I', 1 },
+//     { 'V', 5 },
+//     { 'X', 10 },
+//     { 'L', 50 },
+//     { 'C', 100 },
+//     { 'D', 500 },
+//     { 'M', 1000 },
+// };
+
+// void ResultArray(char[] array)
+// {
+//   int result = 0;
+//   for (int i = 0; i < array.Length - 1; i++)
+//   {
+//     if (romanDigits[array[i]] < romanDigits[array[i + 1]])
+//     {
+//       if (romanDigits[array[i + 1]] / romanDigits[array[i]] > 10)
+//       {
+//         Console.WriteLine("Такой римской цифры не существует!");
+//         break;
+//       }
+//       else
+//       {
+//         result -= romanDigits[array[i]];
+//       }
+//     }
+//     else if (romanDigits[array[i]] >= romanDigits[array[i + 1]])
+//     {
+//       result += romanDigits[array[i]];
+//     }
+//   }
+//   result += romanDigits[array[^1]];
+//   Console.WriteLine($"Введенное число равно {result}");
+// }
 
 Console.WriteLine("Введите римское число: ");
-string input = Console.ReadLine();
+string input = Console.ReadLine() ?? "";
 string upper = input.ToUpper();
-char[] roman = upper.ToCharArray();
+// char[] roman = upper.ToCharArray();
+// ResultArray(roman);
 
-int result = 0;
 
-if (NumberExist(exceptions, upper) == true)
+int romanToInt(string s)
 {
-  for (int i = 0; i < roman.Length - 1; i++)
-  {
-    if (romanDigits[roman[i]] < romanDigits[roman[i + 1]]) result -= romanDigits[roman[i]];
-    else if (romanDigits[roman[i]] >= romanDigits[roman[i + 1]]) result += romanDigits[roman[i]];
-  }
-  result += romanDigits[roman[^1]];
-  Console.WriteLine($"Введенное число равно {result}");
-}
-else
-{
-  Console.WriteLine("Число введено неверно!");
+
 }
