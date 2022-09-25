@@ -43,6 +43,25 @@ void PrintMatrix(int[,] matrix) // Вывод массива в терминал
   }
 }
 
+void CountElementsOfMatrix(int[,] matrix) // Подсчет количества каждого элемента матрицы
+{
+  int count = 0;
+  for (int k = 0; k < 10; k++)
+  {
+    for (int i = 0; i < matrix.GetLength(0); i++)
+    {
+      for (int j = 0; j < matrix.GetLength(1); j++)
+      {
+        if (matrix[i, j] == k) count++;
+      }
+    }
+    if (count != 0)
+    {
+      Console.WriteLine($"Элемент {k} встречается {count} раз");
+      count = 0;
+    }
+  }
+}
 
 int m = ReadNumber("Введите количество строк матрицы: ");
 int n = ReadNumber("Введите количество столбцов матрицы: ");
@@ -52,4 +71,4 @@ int[,] matr = GetMatrix(m, n);
 Console.WriteLine("Исходная матрица:");
 PrintMatrix(matr);
 Console.WriteLine();
-
+CountElementsOfMatrix(matr);
