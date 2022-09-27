@@ -5,7 +5,7 @@ int ReadNumber(string message)
   return Convert.ToInt32(Console.ReadLine());
 }
 
-// Заполнение массива случайными числами от -10 до 10.
+// TODO Заполнение массива случайными числами от -10 до 10.
 int[,] GetMatrix(int rows, int columns, int leftRange = -10, int rightRange = 10)
 {
   int[,] matrix = new int[rows, columns];
@@ -20,7 +20,7 @@ int[,] GetMatrix(int rows, int columns, int leftRange = -10, int rightRange = 10
   return matrix;
 }
 
-// Печать массива в терминал.
+// TODO Печать массива в терминал.
 void PrintMatrix(int[,] matrix)
 {
   for (int i = 0; i < matrix.GetLength(0); i++)
@@ -36,7 +36,7 @@ void PrintMatrix(int[,] matrix)
 
 
 
-// Сортировка матрицы по строкам.
+// TODO Сортировка матрицы по строкам.
 void SortByLineMatrix(int[,] matrix)
 {
   for (int i = 0; i < matrix.GetLength(0); i++)
@@ -58,7 +58,7 @@ void SortByLineMatrix(int[,] matrix)
   }
 }
 
-/* Рандом без повторений.
+/* TODO Рандом без повторений.
 void GetMatrix(int[] array, int[,] matrix)
 matrix[i, j] = array[count++]; */
 int[] NewRandom(int[] randNew)
@@ -77,7 +77,7 @@ int[] NewRandom(int[] randNew)
   return randNew;
 }
 
-// Спиральное заполнение матрицы
+// TODO Спиральное заполнение матрицы
 int[,] SpiralConvertion(int[] array)
 {
   int n = 4;
@@ -100,7 +100,7 @@ int[,] SpiralConvertion(int[] array)
   return matrix;
 }
 
-// Поиск количества повторений элементов в матрице
+// TODO Поиск количества повторений элементов в матрице
 void SearchElementOfMatrix(int[,] matrix)
 {
   int count = 0;
@@ -121,7 +121,7 @@ void SearchElementOfMatrix(int[,] matrix)
   }
 }
 
-// Удаление строки и столбца с минимальным элементом
+// TODO Удаление строки и столбца с минимальным элементом
 int[,] SearchMinElementOfMatrix(int[,] matrix)
 {
   int[,] newMatrix = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
@@ -157,7 +157,7 @@ int[,] SearchMinElementOfMatrix(int[,] matrix)
   return newMatrix;
 }
 
-// Среднее арифметическое матрицы по столбцам.
+// TODO Среднее арифметическое матрицы по столбцам.
 double[] avgSumColumnMatrix(double[,] matrix)
 {
   double[] avg = new double[matrix.GetLength(1)];
@@ -172,10 +172,13 @@ double[] avgSumColumnMatrix(double[,] matrix)
   return avg;
 }
 
-/* Флаг остановки по слову.
+
+// TODO Флаг остановки по слову.
+
 Console.WriteLine("Вводите числа, пока не надоест (стоп-слово 'stop')");
 int i = 0;
-bool flag = true; */
+bool flag = true;
+
 while (flag == true)
 {
   string n = Console.ReadLine();
