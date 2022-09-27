@@ -5,6 +5,8 @@ int ReadNumber(string message)
   return Convert.ToInt32(Console.ReadLine());
 }
 
+int m = ReadNumber("Введите число: ");
+
 // TODO Заполнение массива случайными числами от -10 до 10.
 int[,] GetMatrix(int rows, int columns, int leftRange = -10, int rightRange = 10)
 {
@@ -77,7 +79,7 @@ int[] NewRandom(int[] randNew)
   return randNew;
 }
 
-// TODO Спиральное заполнение матрицы
+// TODO Спиральное заполнение матрицы.
 int[,] SpiralConvertion(int[] array)
 {
   int n = 4;
@@ -100,7 +102,7 @@ int[,] SpiralConvertion(int[] array)
   return matrix;
 }
 
-// TODO Поиск количества повторений элементов в матрице
+// TODO Поиск количества повторений элементов в матрице.
 void SearchElementOfMatrix(int[,] matrix)
 {
   int count = 0;
@@ -121,7 +123,7 @@ void SearchElementOfMatrix(int[,] matrix)
   }
 }
 
-// TODO Удаление строки и столбца с минимальным элементом
+// TODO Удаление строки и столбца с минимальным элементом.
 int[,] SearchMinElementOfMatrix(int[,] matrix)
 {
   int[,] newMatrix = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
@@ -189,3 +191,29 @@ while (flag == true)
     break;
   }
 }
+
+// TODO Собрать строку с числами от А до В.
+// Метод с рекурсией. 
+string NumbersRec(int a, int b)
+{
+  if (a <= b)
+  {
+    return $"{a} " + NumbersRec(a + 1, b);
+  }
+  else return string.Empty;
+}
+
+
+// TODO Сумма чисел от 1 до N.
+// Метод с рекурсией.
+int SumRec(int n)
+{
+  if (n == 0)
+  {
+    return 0;
+  }
+  else return n + SumRec(n - 1);
+}
+
+
+
