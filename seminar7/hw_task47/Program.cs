@@ -5,7 +5,7 @@
 // 1 -3,3 8 -9,9
 // 8 7,8 -7,1 9
 
-double[,] GetMatrix(int size1, int size2) // Наполнение массива случайными вещественными числами.
+double[,] GetMatrix(int size1, int size2, int leftRange = -10, int rightRange = 10) // Наполнение массива случайными вещественными числами.
 {
   double[,] matrix = new double[size1, size2];
   Random rand = new Random();
@@ -13,7 +13,8 @@ double[,] GetMatrix(int size1, int size2) // Наполнение массива
   {
     for (int j = 0; j < size2; j++)
     {
-      matrix[i, j] = Math.Round(rand.NextDouble() * 20 - 10, 1);
+      // matrix[i, j] = Math.Round(rand.NextDouble() * 20 - 10, 1);
+      matrix[i, j] = Math.Round(rand.NextDouble() * (rightRange - leftRange) + leftRange, 1);
     }
   }
   return matrix;
